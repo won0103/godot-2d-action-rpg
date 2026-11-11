@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n77ih"]
 size = Vector2(100, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylr7i"]
+size = Vector2(100, 100)
+
 [node name="Main" type="Node2D" unique_id=912045913]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=672259775]
@@ -16,5 +19,17 @@ script = ExtResource("1_0xm2m")
 texture = ExtResource("1_ig7tw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1318132537]
-position = Vector2(-576, -324)
 shape = SubResource("RectangleShape2D_n77ih")
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=626258159]
+position = Vector2(776, 324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=145494382]
+shape = SubResource("RectangleShape2D_ylr7i")
+
+[node name="ColorRect" type="ColorRect" parent="Wall" unique_id=2075629881]
+offset_left = -47.0
+offset_top = -48.0
+offset_right = 53.0
+offset_bottom = 52.0
+color = Color(1, 0.13099283, 0.2262609, 1)
